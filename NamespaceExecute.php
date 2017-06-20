@@ -6,11 +6,11 @@
 //    include $className. '.php';
 //});
 
-include 'namespaceApp.php';
+include 'NamespaceApp.php';
 use app as app;
 
 //Inheritance implementation - child class
-class namespaceExecute{
+class NamespaceExecute{
     private $breadth, $length,$biceps;
 
     //Interface method redeclaration
@@ -38,14 +38,14 @@ class namespaceExecute{
     public function Bye()
     {
         //implementation of namespace
-        echo app\namespaceApp::goodBye();
+        echo app\NamespaceApp::goodBye();
     }
 }
 
 $john = new namespaceExecute();
 
 //implementation of namespace
-echo app\namespaceApp::welcomeMessage('Men');
+echo app\NamespaceApp::welcomeMessage('Men');
 
 echo '<br />........................................<br />';
 $john -> setCore(70, 80);

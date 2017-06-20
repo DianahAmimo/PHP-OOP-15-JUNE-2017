@@ -2,7 +2,7 @@
 
 namespace app;
 
-class namespaceApp
+class NamespaceApp
 {
     //encapsulation of a variable to be accessed by this classes only
     private $category;
@@ -16,7 +16,7 @@ class namespaceApp
     //encapsulation of a method to be accessed everywhere
     public function welcomeMessage($category)
     {
-        return "Welcome to ".$category." Fashion Corner";
+        return "Welcome to ".$category." Fashion.php Corner";
     }
 
 }
