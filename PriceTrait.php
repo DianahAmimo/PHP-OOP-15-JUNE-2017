@@ -1,6 +1,6 @@
 <?php
 //traits implementation
-trait Price
+trait PriceTrait
 {
     public $material, $size, $cost;
     public function setPrice($material, $size, $cost){
@@ -11,6 +11,6 @@ trait Price
 
     public function getPrice(){
         echo '<strong><i><u>This is a trait implementation</u></i></strong></br>';
-        return 'Material: ' . $this->material .'</br>Size: ' . $this->size . '</br>Cost: ' . $this->cost;
+        return 'Material: ' . $this->material .'</br>Size: ' . $this->size . '</br>Material Cost: ' . $this->cost;
     }
 }

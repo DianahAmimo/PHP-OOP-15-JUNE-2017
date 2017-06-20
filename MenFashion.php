@@ -1,7 +1,7 @@
 <?php
 
 //Inheritance implementation - child class
-class MenFashion extends Fashion implements Core {
+class MenFashion extends Fashion implements Measurements {
 
     private $breadth, $length, $biceps;
 
@@ -22,14 +22,14 @@ class MenFashion extends Fashion implements Core {
     }
 
     //Interface method redeclaration
-    public function setCore($breadth, $length)
+    public function setMeasurements($breadth, $length)
     {
         $this -> breadth = $breadth;
         $this -> length = $length;
     }
 
     //Interface method redeclaration
-    public function getCore()
+    public function getMeasurements()
     {
         return "Breadth : ".$this->breadth ."</br>Length : ".$this->length;
     }
