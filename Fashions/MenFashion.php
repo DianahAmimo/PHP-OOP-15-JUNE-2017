@@ -1,8 +1,11 @@
-<?php
+<?php namespace Fashions;
 
-class WomenFashion extends Fashion implements Measurements{
-    private $breadth, $length, $shoulder, $waist;
+//Inheritance implementation - child class
+class MenFashion extends Fashion implements Measurements {
 
+    private $breadth, $length, $biceps;
+
+//    Inheriting methods from the parent class Fashion
     public function setFashion($material, $color, $attire)
     {
         parent::setFashion($material, $color, $attire);
@@ -26,34 +29,14 @@ class WomenFashion extends Fashion implements Measurements{
         return "Breadth : ".$this->breadth ."</br>Length : ".$this->length;
     }
 
-
-    public function setShoulder($shoulder)
+    public function setBiceps($biceps)
     {
-        $this->shoulder = $shoulder;
+        $this->biceps = $biceps;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getShoulder()
+    public  function  getBiceps()
     {
-        return "Shoulder : ".$this->shoulder;
-    }
-
-    /**
-     * @param mixed $waist
-     */
-    public function setWaist($waist)
-    {
-        $this->waist = $waist;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getWaist()
-    {
-        return 'Waist : '.$this->waist;
+        return "Biceps : ".$this->biceps;
     }
 
     //encapsulation - calling a method from the parent class
@@ -62,3 +45,5 @@ class WomenFashion extends Fashion implements Measurements{
         echo $this -> goodBye();
     }
 }
+
+

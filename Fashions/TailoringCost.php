@@ -1,4 +1,4 @@
-<?php
+<?php namespace Fashions;
     class TailoringCost{
         //initializing a sharable trait
         use PriceTrait;

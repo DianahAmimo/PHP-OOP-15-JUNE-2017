@@ -1,69 +1,77 @@
-<?php namespace index;
+<?php
 
-//this is the main entry of the application
+use Fashions\Material;
+use Fashions\MenFashion;
+use Fashions\TailoringCost;
+use Fashions\WomenFashion;
 
 //autoloading implementation - autoloading all classes from all files
-spl_autoload_register(function($className){
-    include $className. '.php';
-});
+function __autoload($class_name) {
+    $filename = __DIR__ . DIRECTORY_SEPARATOR . str_replace('\\', DIRECTORY_SEPARATOR, $class_name) . '.php';
+    if(file_exists($filename)) {
+        require_once($filename);
+    } else {
+        throw new Exception("Unable to load $filename.");
+    }
+}
 
-$mary = new \WomenFashion();
+$obj1 = new WomenFashion();
 
-echo $mary->welcomeMessage('Women');
+echo $obj1->welcomeMessage('Women');
 
 echo '<hr>';
 //calling welcomeMessage from the parent class Welcome
-$mary->setFashion('sattin', 'red', 'Home dress');
-echo $mary->getFashion();
+$obj1->setFashion('sattin', 'red', 'Home dress');
+echo $obj1->getFashion();
 
 echo '<hr>';
 echo '<strong><i><u>Measurement details</u></i></strong>';
 echo '<br />';
-$mary -> setMeasurements(50, 60);
-$mary -> setShoulder(45);
-$mary -> setWaist(45);
+$obj1 -> setMeasurements(50, 60);
+$obj1 -> setShoulder(45);
+$obj1 -> setWaist(45);
 
-echo $mary -> getMeasurements();
+echo $obj1 -> getMeasurements();
 echo "<br />";
 
-echo $mary -> getShoulder();
+echo $obj1 -> getShoulder();
 echo "<br />";
 
-echo $mary -> getWaist();
+echo $obj1 -> getWaist();
 echo "<br /><br /><br />";
 
-echo $mary -> Bye();
+echo $obj1 -> Bye();
 echo "<br /><br />";
 
 echo '<hr>';
-$john = new \MenFashion();
+$obj2 = new MenFashion();
 //calling welcomeMessage from the parent class Welcome
-echo $mary->welcomeMessage('Men');
+echo $obj2->welcomeMessage('Men');
 
 echo '<hr>';
 //calling welcomeMessage from the parent class Welcome
-$mary->setFashion('Kitenge', 'Blue', 'Fancy suit');
-echo $mary->getFashion();
+$obj2->setFashion('Kitenge', 'Blue', 'Fancy suit');
+echo $obj2->getFashion();
 
 echo '<hr>';
 echo '<strong><i><u>Measurement details</u></i></strong>';
 echo '<br />';
-$john -> setMeasurements(70, 80);
-$john -> setBiceps(28);
+$obj2 -> setMeasurements(70, 80);
+$obj2 -> setBiceps(28);
 
-echo $john -> getMeasurements();
+echo $obj2 -> getMeasurements();
 echo "<br />";
 
-echo $john -> getBiceps();
+echo $obj2 -> getBiceps();
 echo "<br />";
 
 echo "<br /><br />";
-echo $john -> Bye();
+echo $obj2 -> Bye();
 echo "<br />";
 echo '<hr>';
 
 //Calling the Price trait in the TailoringCost class
-$trait1 = new \TailoringCost();
+$trait1 = new TailoringCost();
 
 $trait1->setPrice('Kitenge', 4, 2500);
 echo $trait1->getPrice();
@@ -74,12 +82,10 @@ echo "<br />";
 
 echo '<hr>';
 //Calling the Price trait in the Material class
-$trait2 = new \Material();
+$trait2 = new Material();
 echo "<br />";
 
 $trait2->setPrice('Silk', 6, 8000);
 echo $trait2->getPrice();
 echo "<br />";
 echo $trait2->importedFrom('China');
-
-

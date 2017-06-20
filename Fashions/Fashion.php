@@ -1,4 +1,4 @@
-<?php
+<?php namespace Fashions;
     class Fashion{
         private $material, $color, $attire;
 

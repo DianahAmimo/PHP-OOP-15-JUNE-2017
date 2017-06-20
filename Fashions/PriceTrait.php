@@ -1,4 +1,4 @@
-<?php
+<?php namespace Fashions;
 //traits implementation
 trait PriceTrait
 {
